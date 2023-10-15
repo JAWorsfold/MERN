@@ -1,8 +1,8 @@
 import * as dotenv from 'dotenv'
 import express from 'express'
 import mongoose from 'mongoose'
-import { workouts } from './workouts'
-import { Credentials, makeMongoDBConnector } from './utils'
+import { workouts } from './routes/workouts'
+import { Credentials, makeMongoDBConnector } from './utilities'
 
 dotenv.config()
 
