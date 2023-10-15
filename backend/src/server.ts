@@ -6,7 +6,9 @@ dotenv.config()
 
 // express app
 const app = express()
+
 // middleware
+app.use(express.json())
 app.use((req, _, next) => {
   console.log(`${req.method} ${req.hostname}:${process.env.PORT}${req.path}`)
   next()

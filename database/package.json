@@ -1,0 +1,11 @@
+{
+  "name": "mern-database",
+  "version": "1.0.0",
+  "author": "Joe Worsfold",
+  "license": "MIT",
+  "scripts": {
+    "start": "docker-compose up -d",
+    "stop": "docker-compose stop",
+    "down": "docker-compose down"
+  }
+}
