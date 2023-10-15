@@ -4,11 +4,16 @@ import express from 'express'
 dotenv.config()
 const app = express()
 
-app.get('/', (req, res) => {
-  console.log(`${req.method} ${req.hostname}:${process.env.PORT}${req.url}`)
+// middleware
+app.use((req, _, next) => {
+  console.log(`${req.method} ${req.hostname}:${process.env.PORT}${req.path}`)
+  next()
+})
+
+app.get('/', (_, res) => {
   res.json({ msg: 'Welcome to the app' })
 })
 
 app.listen(process.env.PORT, () => {
-  console.log('Listing on port 3000')
+  console.log(`Listing on port ${process.env.PORT}`)
 })
