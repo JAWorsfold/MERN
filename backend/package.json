@@ -1,7 +1,7 @@
 {
   "name": "mern-backend",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": ".src/server.ts",
   "author": "Joe Worsfold",
   "license": "MIT",
   "scripts": {
