@@ -11,6 +11,12 @@
 
 ## Database
 
+Setup with:
+
+```bash
+cp .example.env .env
+```
+
 Run using:
 
 ```bash
@@ -20,5 +26,5 @@ cd database && yarn start
 Connect via terminal with:
 
 ```bash
-mongosh admin -u <user> -p <password>
+yarn connect
 ```

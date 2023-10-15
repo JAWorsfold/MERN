@@ -6,6 +6,7 @@
   "scripts": {
     "start": "docker-compose up -d",
     "stop": "docker-compose stop",
-    "down": "docker-compose down"
+    "down": "docker-compose down",
+    "connect": "mongosh admin -u ${DB_USER} -p ${DB_PASSWORD}"
   }
 }
