@@ -7,8 +7,25 @@ type ControllerPattern = (
 ) => Promise<Express.Response>
 
 // get all workouts
+export const getWorkouts: ControllerPattern = async (_req, res) => {
+  return await Workout.find({})
+    .sort({ createdAt: -1 })
+    .then((workouts) => res.status(200).json(workouts))
+    .catch((err) =>
+      res.status(400).json((({ name, message }) => ({ name, message }))(err))
+    )
+}
 
 // get single workout
+export const getWorkout: ControllerPattern = async (req, res) => {
+  const { id } = req.params
+  return await Workout.findById({ id })
+    .sort({ createdAt: -1 })
+    .then((workout) => res.status(200).json(workout))
+    .catch((err) =>
+      res.status(400).json((({ name, message }) => ({ name, message }))(err))
+    )
+}
 
 // create a new workout
 

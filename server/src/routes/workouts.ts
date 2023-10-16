@@ -1,15 +1,11 @@
 import Express from 'express'
-import { createWorkout } from '../controllers/workouts'
+import { createWorkout, getWorkout, getWorkouts } from '../controllers/workouts'
 
 export const workouts = Express.Router()
 
-workouts.get('/', (_, res) => {
-  res.json({ msg: 'GET all workouts' })
-})
+workouts.get('/', getWorkouts)
 
-workouts.get('/:id', (_, res) => {
-  res.json({ msg: 'GET a single workout' })
-})
+workouts.get('/:id', getWorkout)
 
 workouts.post('/', createWorkout)
 
