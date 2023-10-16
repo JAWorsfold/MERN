@@ -1,5 +1,5 @@
 {
-  "name": "mern-backend",
+  "name": "mern-server",
   "version": "1.0.0",
   "main": ".src/server.ts",
   "author": "Joe Worsfold",

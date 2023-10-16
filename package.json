@@ -1,0 +1,12 @@
+{
+  "name": "mern",
+  "version": "1.0.0",
+  "repository": "https://github.com/JAWorsfold/MERN.git",
+  "author": "Joe Worsfold",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn start:db && yarn start:server",
+    "start:db": "cd database/ && yarn start",
+    "start:server": "cd server/ && yarn start"
+  }
+}

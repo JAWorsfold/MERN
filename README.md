@@ -1,5 +1,10 @@
 # MERN Tutorial
 
+1. [Dependencies](#dependencies)
+2. [Database](#database)
+3. [Server](#server)
+4. [Client](#client)
+
 ## Dependencies
 
 - node
@@ -28,3 +33,11 @@ Connect via terminal with:
 ```bash
 yarn connect:app
 ```
+
+## Server
+
+tbd
+
+## Client
+
+tbd
