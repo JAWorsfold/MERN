@@ -1,5 +1,5 @@
 import * as dotenv from 'dotenv'
-import express from 'express'
+import Express from 'express'
 import mongoose from 'mongoose'
 import { workouts } from './routes/workouts'
 import { Credentials, makeMongoDBConnector } from './utilities'
@@ -7,11 +7,11 @@ import { Credentials, makeMongoDBConnector } from './utilities'
 dotenv.config()
 
 // express app
-const app = express()
+const app: Express.Application = Express()
 
 // middleware
-app.use(express.json())
-app.use((req, _, next) => {
+app.use(Express.json())
+app.use((req: Express.Request, _, next: Express.NextFunction) => {
   console.log(`${req.method} ${req.hostname}:${process.env.PORT}${req.path}`)
   next()
 })
@@ -25,17 +25,18 @@ const credentials: Credentials = {
   password: process.env.DB_PASSWORD ?? 'password',
 }
 const host: string = process.env.DB_HOST ?? 'localhost'
-const port: string = process.env.DB_PORT ?? 'port'
-const mongoDBURI = makeMongoDBConnector(credentials)(host)(port)
+const port: string = process.env.DB_PORT ?? '27017'
+const name: string = process.env.DB_NAME ?? ''
+const mongoDBURI = makeMongoDBConnector(credentials)(host)(port)(name)
 console.log(mongoDBURI)
 
+const app_port: string = process.env.PORT ?? '3000'
 mongoose
   .connect(mongoDBURI)
   .then(() => {
     // listeners
-    app.listen(process.env.PORT, () => {
-      console.log(`Listing on port ${process.env.PORT}`)
+    app.listen(app_port, () => {
+      console.log(`Listing on port ${app_port}`)
     })
   })
   .catch((err) => console.log(err))
-
