@@ -24,5 +24,9 @@
     "baseUrl": "."
   },
   "exclude": ["node_modules"],
-  "include": ["./src/*.ts", "src/routes/workouts.ts"]
+  "include": [
+    "./src/*.ts",
+    "src/routes/workouts.ts",
+    "src/utilities/database.ts"
+  ]
 }

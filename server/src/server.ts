@@ -2,7 +2,7 @@ import * as dotenv from 'dotenv'
 import Express from 'express'
 import mongoose from 'mongoose'
 import { workouts } from './routes/workouts'
-import { Credentials, makeMongoDBConnector } from './utilities'
+import { Credentials, makeMongoDBConnector } from './utilities/database'
 
 dotenv.config()
 
