@@ -4,6 +4,7 @@ import {
   deleteWorkout,
   getWorkout,
   getWorkouts,
+  updateWorkout,
 } from '../controllers/workouts'
 
 export const workouts = Express.Router()
@@ -16,6 +17,4 @@ workouts.post('/', createWorkout)
 
 workouts.delete('/:id', deleteWorkout)
 
-workouts.patch('/:id', (_, res) => {
-  res.json({ msg: 'PATCH a new workout' })
-})
+workouts.patch('/:id', updateWorkout)

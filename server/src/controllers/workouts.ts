@@ -34,7 +34,6 @@ export const createWorkout: ControllerPattern = async (req, res) => {
     .catch((err: Error) => res.status(400).json(errorWithoutStack(err)))
 }
 
-// delete a workout
 export const deleteWorkout: ControllerPattern = async (req, res) => {
   const { id } = req.params
   return await Workout.findOneAndDelete({ _id: id })
@@ -46,4 +45,13 @@ export const deleteWorkout: ControllerPattern = async (req, res) => {
     .catch((err: Error) => res.status(400).json(errorWithoutStack(err)))
 }
 
-// patch a workout
+export const updateWorkout: ControllerPattern = async (req, res) => {
+  const { id } = req.params
+  return await Workout.findOneAndUpdate({ _id: id }, { ...req.body })
+    .then((workout) => {
+      mongoose.Types.ObjectId.isValid(id) && workout
+        ? res.status(200).json(workout)
+        : res.status(404).json(workoutNotFound(req))
+    })
+    .catch((err: Error) => res.status(400).json(errorWithoutStack(err)))
+}
