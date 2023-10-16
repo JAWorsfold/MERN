@@ -19,7 +19,7 @@ export const getWorkouts: ControllerPattern = async (_req, res) => {
 // get single workout
 export const getWorkout: ControllerPattern = async (req, res) => {
   const { id } = req.params
-  return await Workout.findById({ id })
+  return await Workout.findById(id)
     .sort({ createdAt: -1 })
     .then((workout) => res.status(200).json(workout))
     .catch((err) =>
