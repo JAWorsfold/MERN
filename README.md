@@ -26,5 +26,5 @@ cd database && yarn start
 Connect via terminal with:
 
 ```bash
-yarn connect
+yarn connect:app
 ```
