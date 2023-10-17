@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { HydratedDocument } from 'mongoose'
 import { IWorkout } from '../../../server/src/models/workout'
-import { Workout } from '../components/Workout'
+import { Workout, WorkoutForm } from '../components'
 
 export const Home = () => {
   const [workouts, setWorkouts] = useState<HydratedDocument<IWorkout>[]>([])
@@ -23,6 +23,7 @@ export const Home = () => {
             <Workout key={workout.id} workout={workout} />
           ))}
       </div>
+      <WorkoutForm />
     </div>
   )
 }

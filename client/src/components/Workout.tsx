@@ -5,10 +5,10 @@ interface WorkoutType {
   workout: HydratedDocument<IWorkout>
 }
 export const Workout = ({ workout }: WorkoutType) => {
-  const workoutCreatedAt = new Date(workout.createdAt).toDateString()
+  const workoutCreatedAt = new Date(workout.createdAt ?? '').toDateString()
 
   return (
-    <div className="workout-detail">
+    <div className="workout-details">
       <h4>{workout.title}</h4>
       <p>
         <strong>Load (kg): </strong>
