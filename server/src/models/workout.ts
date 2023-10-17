@@ -4,6 +4,7 @@ export interface IWorkout {
   title: string
   reps: number
   load: number
+  createdAt: Date
 }
 
 const workoutSchema: Schema<IWorkout> = new Schema<IWorkout>(
